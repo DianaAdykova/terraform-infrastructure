@@ -40,3 +40,23 @@ variable "external-dns-config" {
     chart_version            = "6.11.3"
   }
 }
+# variable configurations for Cert Manager helm chart deployment
+variable "cert-manager-config" {
+  type        = map(any)
+  description = "Please define cert-manager helm chart version, and deployment_name "
+  default = {
+    deployment_name          = "cert-manager"
+    chart_version            = "1.10.0"
+  }
+}
+
+# variable configurations for Hashicorp Vault helm chart deployment
+
+variable "vault-config" {
+  type        = map(any)
+  description = "Please define vault helm chart version, and deployment_name "
+  default = {
+    deployment_name          = "vault"
+    chart_version            = "0.22.1"
+  }
+}
